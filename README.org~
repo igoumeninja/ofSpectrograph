@@ -1,0 +1,15 @@
+#+Latex_CLASS: foudoc
+#+TITLE: ofSpectrograph    
+#+AUTHOR:    Iannis Zannos & Aris Bezas
+#+DATE:   <2011-09-29 Thu>   
+#+DESCRIPTION: 
+#+KEYWORDS: 
+
+* Setup - Install
+1. Activate the quark "ofSpectrograph"
+2. Update the Extensions of the SuperCollider with rsync
+#+BEGIN_EXAMPLE
+rsync -r /Users/fou/Projects/Artistic/Conferences/wfae2011/ofSpectrograph /Users/fou/Library/Application\ Support/SuperCollider/Extensions/projects
+#+END_EXAMPLE
+or
+just run the alias "ofSpectrograph" at the Terminal

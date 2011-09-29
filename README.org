@@ -1,0 +1,37 @@
+#+Latex_CLASS: foudoc
+#+TITLE: ofSpectrograph    
+#+AUTHOR:    Iannis Zannos & Aris Bezas
+#+DATE:   <2011-09-29 Thu>   
+#+DESCRIPTION: 
+#+KEYWORDS: 
+
+* Info 
+
+[[https://github.com/igoumeninja/ofSpectrograph][ofSpectrograph]] visualize spectrograph data from SuperCollider to openFrameworks.
+
+* Setup - Install
+Open the Terminal and folow the instructions:
+- cd ~/Library/Application\ Support/SuperCollider/Extensions
+- git clone git://github.com/igoumeninja/ofSpectrograph.git
+** personal setup
+1. Activate the quark "ofSpectrograph"
+2. Update the Extensions of the SuperCollider with rsync
+#+BEGIN_EXAMPLE
+rsync -r /Users/fou/Projects/Artistic/Conferences/wfae2011/ofSpectrograph /Users/fou/Library/Application\ Support/SuperCollider/Extensions/projects
+#+END_EXAMPLE
+or
+just run the alias "ofSpectrograph" at the Terminal
+3.Open sc-ofSpectrograph.scd
+
+* of-sc-documentation
+//:Change variables
+OF.reverse;
+OF.int("mirrorMode", 4);
+OF.float("spectroRed", 1);
+OF.float("spectroGreen", 0);
+OF.float("spectroBlue", 1);
+OF.float("spectroRedUp", 1);
+OF.float("spectroGreenUp", 1);
+OF.float("spectroBlueUp", 1);
+
+
