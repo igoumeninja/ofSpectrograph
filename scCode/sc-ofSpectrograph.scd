@@ -23,7 +23,7 @@ SendSpectrogramData.new;
 { | i | format("mySynths%", i).asSymbol.set(\bufnum, rrand(1,12).asInteger) } ! 10;
 
 //:Change variables
-OF.int("mirrorMode", 4);
+OF.int("mirrorMode", -1);
 OF.float("spectroRed", 1);
 OF.float("spectroGreen", 1);
 OF.float("spectroBlue", 1);
