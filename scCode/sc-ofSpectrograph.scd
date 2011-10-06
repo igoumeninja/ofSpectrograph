@@ -18,13 +18,15 @@ SendSpectrogramData.new;
 
 //:Rate play
 { | i | format("mySynths%", i).asSymbol.set(\rate, i * 0.001 + 1) } ! 10;
+
 //:Many Buffers
-{ | i | format("mySynths%", i).asSymbol.set(\bufnum, 5) } ! 10;
+{ | i | format("mySynths%", i).asSymbol.set(\bufnum, rrand(1,12).asInteger) } ! 10;
+
 //:Change variables
 OF.int("mirrorMode", 4);
 OF.float("spectroRed", 1);
-OF.float("spectroGreen", 0);
-OF.float("spectroBlue", 0);
+OF.float("spectroGreen", 1);
+OF.float("spectroBlue", 1);
 OF.float("spectroRedUp", 1);
 OF.float("spectroGreenUp", 1);
 OF.float("spectroBlueUp", 1);

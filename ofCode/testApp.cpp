@@ -13,9 +13,9 @@ void testApp::setup(){
 	ofEnableAlphaBlending();
 	ofBackground(0,0,0);
 	ofSetFrameRate(60);
-	ofSetWindowTitle("ofSpectrogram");
+	ofSetWindowTitle("ofSpectrogram - wfae presentation");
 	texScreen.allocate(ofGetWidth(), ofGetHeight(),GL_RGB);// GL_RGBA); 
-	ofSetFullscreen(true);
+	ofSetFullscreen(false);
 
 	// listen on the given port
 	cout << "listening for osc messages on port " << PORT << "\n";

@@ -34,4 +34,7 @@ OF.float("spectroRedUp", 1);
 OF.float("spectroGreenUp", 1);
 OF.float("spectroBlueUp", 1);
 
+* for insiration
+- [[http://synapticstimuli.com/life-spectrum/][What would a spectrum analysis of your life look like?]]
+
 
