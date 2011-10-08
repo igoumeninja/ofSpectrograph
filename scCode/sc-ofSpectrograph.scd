@@ -10,6 +10,8 @@ SendSpectrogramData.new;
 //SendSpectrogramData('ofSpectrograph');
 //SendSpectrogramData('ofSpectrograph').free;
 
+//:Use SoundIn
+'pure_clarinet'.playDef
 
 //:PV_BinSfift one buffer
 { | i | format("mySynths%", i).asSymbol.playDef(\pv_binShift, 
