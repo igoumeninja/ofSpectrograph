@@ -15,7 +15,7 @@ void testApp::setup(){
 	ofSetFrameRate(60);
 	ofSetWindowTitle("ofSpectrogram");
 	texScreen.allocate(ofGetWidth(), ofGetHeight(),GL_RGB);// GL_RGBA); 
-	ofSetFullscreen(false);
+	//ofSetFullscreen(false);
 
 	// listen on the given port
 	cout << "listening for osc messages on port " << PORT << "\n";
@@ -25,7 +25,7 @@ void testApp::setup(){
 	
 	iv["textureRed"] = iv["textureGreen"] = iv["textureBlue"] = iv["textureAlpha"] = 255;
 	iv["reverseEllipse"] = ofGetWidth();	iv["reverseTexture"] = -1;
-	iv["mirrorMode"] = 0;
+	iv["mirrorMode"] = -2;
 	fv["spectroRed"] = fv["spectroGreen"] = fv["spectroBlue"] = 1;
 }
 
@@ -48,7 +48,7 @@ void testApp::update(){
 			switch ( iv["mirrorMode"] )
 			  {
 				// full screen normal spectro
-				case -2:
+				case -20:
 					for (int i=0; i<512; i++)	{
 						data[i] = m.getArgAsFloat( i );
 						glColor3f(fv["spectroRed"]*data[i],0,0);
@@ -64,6 +64,23 @@ void testApp::update(){
 					break;
 
 				// fire colors
+				case -2:
+					for (int i=0; i<512; i++)	{
+						data[i] = m.getArgAsFloat( i );
+						glColor3f(fv["spectroRed"]*data[i],0,0);
+						ofEllipse(iv["reverseEllipse"],512-i,2,2);
+						ofEllipse(iv["reverseEllipse"],512+i,2,2);
+						glColor4f(fv["spectroRed"]*data[i],fv["spectroGreen"]*data[i],0,data[i]);
+						ofEllipse(iv["reverseEllipse"],512-i,2,2);
+						ofEllipse(iv["reverseEllipse"],512+i,2,2);						
+						
+					}
+					texScreen.loadScreenData(0,0,ofGetWidth(), ofGetHeight());
+					ofSetColor(iv["textureRed"],iv["textureGreen"],iv["textureBlue"],iv["textureAlpha"]);
+					texScreen.draw(iv["reverseTexture"],0,ofGetWidth(), ofGetHeight());
+					
+					break;
+
 				case -1:
 					for (int i=0; i<512; i++)	{
 						data[i] = m.getArgAsFloat( i );

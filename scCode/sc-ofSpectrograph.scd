@@ -1,11 +1,34 @@
 //:ofSpectrograph
 //:==============
+//:open oF app
+"open -a /Users/fou/Projects/phD/code/Gea/apps/abizof/110517_ofSpectrograph/bin/openFrameworks.app/Contents/MacOS/openFrameworks".unixCmd;
+//:close oF app
+"killall openFrameworks".unixCmd;
+//:open cutMotion
+//:open oF app
+"open -a /Users/fou/Projects/phD/code/Gea/apps/abizof/110728_cutMotion/bin/openFrameworks.app/Contents/MacOS/openFrameworks".unixCmd;
+
+//:change application
+{
+"open -a /Users/fou/Projects/phD/code/Gea/apps/abizof/110517_ofSpectrograph/bin/openFrameworks.app/Contents/MacOS/openFrameworks".unixCmd;
+
+2.wait;
+"killall openFrameworks".unixCmd;
+
+"open -a /Users/fou/Projects/phD/code/Gea/apps/abizof/110728_cutMotion/bin/openFrameworks.app/Contents/MacOS/openFrameworks".unixCmd;
+
+"open /Users/fou/Projects/Artistic/Sketches/cutMotion/scCode/play-images.scd".unixCmd;
+"open /Users/fou/Projects/Artistic/Sketches/cutMotion/scCode/load-images.scd".unixCmd
+
+}.fork
 //:Send Synths to server
 MySynths.sendToServer;
 //:Load Buffers
 MyBuffers.seals;
 //:SendSpectrogramData
 SendSpectrogramData.new;
+
+SendAmpFreq.start
 //SendSpectrogramData('fft').free;
 //SendSpectrogramData('ofSpectrograph');
 //SendSpectrogramData('ofSpectrograph').free;
@@ -25,8 +48,8 @@ SendSpectrogramData.new;
 { | i | format("mySynths%", i).asSymbol.set(\bufnum, rrand(1,12).asInteger) } ! 10;
 
 //:Change variables
-OF.int("mirrorMode", -1);
-OF.float("spectroRed", 1);
+OF.int("mirrorMode", -2);
+vOF.float("spectroRed", 1);
 OF.float("spectroGreen", 1);
 OF.float("spectroBlue", 1);
 OF.float("spectroRedUp", 1);

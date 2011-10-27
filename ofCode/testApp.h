@@ -4,16 +4,12 @@
 #include "ofMain.h"
 
 #include "ofx3DModelLoader.h"
-#include "ofxDirList.h"
 #include "ofxNetwork.h"
 #include "ofxOpenCv.h"
 #include "ofxOsc.h"
-#include "ofxThread.h"
 #include "ofxVectorGraphics.h"
-#include "ofxVectorMath.h"
 #include "ofxXmlSettings.h"
 
-#include "ofx3DUtils.h"
 
 // listen on port 12345
 #define PORT 12345
@@ -38,12 +34,9 @@ class testApp : public ofBaseApp{
 		
 		ofxCvGrayscaleImage cvGray;
 		ofx3DModelLoader modelLoader;
-		ofxDirList dirList;
-		ofxVec2f p;
 		ofxTCPClient client;
 		ofxTCPServer server;
 		ofxOscSender osc_sender;
-		ofxThread thread;
 		ofxXmlSettings settings;
 		
 		ofTexture		texScreen;
